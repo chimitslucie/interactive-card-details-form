@@ -1,27 +1,321 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/* start basics */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 
 :root {
-  
+    --red: #ff5050;
+    --white: #ffffff;
+    --light-grey: #dfdee0;
+    --purplish-grey: #8f8694;
+    --deep-violet: #21092f;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  img {
+}
+
+img {
     width: 100%;
     max-width: 100%;
-  }
-  
-  html,
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-  }
+}
 
-  body {
+html,
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+}
+
+body {
     width: 100vw;
     height: 100vh;
-  }
+}
+/* end basics */
+
+/* start composant */
+.text__error {
+    font-size: 12px;
+    color: var(--red);
+    margin-top: 10px;
+    display: none;
+    font-weight: 500;
+}
+
+.title__form {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--deep-violet);
+    font-weight: 500;
+}
+
+.card__text {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+h3,
+.input__text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 28px;
+    letter-spacing: 3.42px;
+    font-weight: 500;
+}
+
+.btn__primary {
+    width: 380px;
+    height: 55px;
+    background: var(--deep-violet);
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn__primary:hover {
+    background: var(--white);
+    color: var(--deep-violet);
+    border: 1px solid var(--deep-violet);
+}
+/* end composant */
+
+/* start site */
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.color__party {
+    background: url(../img/bg-main-desktop.png);
+    background-size: cover;
+    width: 485px;
+    height: 100vh;
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    top: 185px;
+    left: 165px;
+}
+
+.card__front {
+    background: url(../img/bg-card-front.png);
+    background-size: cover;
+    width: 450px;
+    border-radius: 10px;
+    padding: 30px 30px 25px 30px;
+    color: var(--white);
+}
+
+.card__logo {
+    width: 85px;
+}
+
+.card__number {
+    margin: 65px auto 25px auto;
+}
+
+.card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__back {
+    background: url(../img/bg-card-back.png);
+    background-size: cover;
+    color: var(--white);
+    width: 450px;
+    height: 245px;
+    padding: 110px 55px 0 0;
+    border-radius: 10px;
+    text-align: end;
+    margin: 35px 0 0 95px;
+}
+
+.form__party {
+    margin: auto auto;
+    display: block;
+}
+
+.form__party.close {
+    display: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.group {
+    margin-bottom: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid var(--light-grey);
+    box-shadow: none;
+    padding: 10px 15px;
+    width: 380px;
+    color: var(--deep-violet);
+}
+
+.form-content {
+    display: flex;
+    align-items: center;
+}
+
+.form-month,
+.form-year {
+    width: 80px;
+}
+
+.form-cvc {
+    width: 190px;
+}
+
+.form-month::-webkit-outer-spin-button,
+.form-year::-webkit-outer-spin-button,
+.form-cvc::-webkit-outer-spin-button,
+.form-month::-webkit-inner-spin-button,
+.form-year::-webkit-inner-spin-button,
+.form-cvc::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.form-group:last-child {
+    margin-left: 20px;
+}
+
+.form-control:hover {
+    border: 1px solid #6348FE;
+}
+
+.request__btn {
+    margin-top: 40px;
+}
+
+input.error {
+    border: 1px solid var(--red);
+}
+
+.text__error.error {
+    display: block;
+}
+
+.thank__party {
+    margin: auto;
+    text-align: center;
+    display: none;
+}
+
+.thank__party.active {
+    display: block;
+}
+
+.thank__logo {
+    width: 80px;
+}
+
+.thank__title {
+    text-transform: uppercase;
+    margin: 35px 0 15px 0;
+}
+
+.thank__text {
+    color: var(--purplish-grey);
+    margin-bottom: 50px;
+}
+
+@media (max-width: 375px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .color__party {
+        background: url(../img/bg-main-mobile.png);
+        height: 240px;
+        width: 100%;
+    }
+
+    .card {
+        top: 30px;
+        left: 15px;
+    }
+
+    .card__front {
+        width: 290px;
+        padding: 15px 20px 20px 20px;
+        position: relative;
+        z-index: 1;
+        top: 90px;
+    }
+
+    .card__logo {
+        width: 55px;
+    }
+
+    .card__number {
+        margin: 35px auto 15px auto;
+        font-size: 18px;
+        letter-spacing: 2.2px;
+    }
+
+    .card__text {
+        font-size: 9px;
+        letter-spacing: 1.29px;
+    }
+
+    .card__back {
+        width: 290px;
+        height: 155px;
+        padding: 75px 40px 0 0;
+        margin: 0;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 55px;
+    }
+
+    .form__party {
+        margin-top: 90px;
+    }
+
+    .form-control {
+        width: 325px;
+    }
+
+    .form-month, .form-year {
+        width: 70px;
+    }
+
+    .form-cvc {
+        width: 160px;
+    }
+
+    .btn__primary {
+        width: 325px;
+    }
+
+    .thank__party {
+        margin-top: 90px;
+    }
+}
